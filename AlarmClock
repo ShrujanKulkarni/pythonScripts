@@ -1,0 +1,24 @@
+#Alarm Clock problem
+
+
+
+inp = input()
+myList = inp.split(',')
+d = int(myList[0]) #Day of the week
+v = bool(myList[1]) #Vacation mode, 1 =Vacation, 0 is not on vacation
+
+k = {'1':'Monday', '2':'Tuesday','3':'Wednesday','4':'Thursday','5':'Friday', '6':'Saturday', '7':'Sunday'}
+
+
+if(v==True):
+    if(d<=5):
+        print("Vacation,Weekday, Alarm rings at 10.00 AM")
+    else:
+        print("No alarm")
+        
+else:
+    if(d<=5):
+        print("No Vacation,Weekday, Alarm rings at 7.00 AM")
+    else:
+        print("No Vacation,Weekend, Alarm rings at 10.00 AM")
+        
