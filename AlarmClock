@@ -1,6 +1,6 @@
 #Alarm Clock problem
 
-
+# edited from Pull request
 
 inp = input()
 myList = inp.split(',')
