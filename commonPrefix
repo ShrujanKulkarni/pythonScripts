@@ -1,0 +1,27 @@
+
+# COMMON PREFIX
+
+s1=input()
+s2=input()
+s1= s1.lower()
+s2=s2.lower()
+
+#start writing your code to find largest common prefix here
+
+l1 = len(s1)
+l2 = len(s2)
+l3  = min(l1,l2)
+
+
+for i in range(l3):
+    if(s1[i]!=s2[i]):
+        break
+
+if(i==0):
+    print("-1")
+
+else:
+    print(s1[:i])
+
+
+
