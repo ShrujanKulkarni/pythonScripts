@@ -1,0 +1,9 @@
+#capitalize first letter of every word of string ---> using function 'title'
+
+st = input()
+st = st.lower()
+st = st.split(" ")
+
+final_st = [words.title() for words in st]
+str1  = "_".join(final_st)
+print(str1)
