@@ -1,0 +1,56 @@
+Flatten a dictionary
+Description
+Consider a nested dictionary as follows:
+
+{'Fruit': 1, 'Vegetable': {'Cabbage': 2, 'Cauliflower': 3}, 'Spices': 4}
+
+Your task is to flatten a nested dictionary and join the nested keys with the "_" character. For the above dictionary, the flattened dictionary would be as follows:
+
+{'Fruit': 1, 'Vegetable_Cabbage': 2, 'Vegetable_Cauliflower': 3, 'Spices': 4}
+
+Sample Input:
+
+{'Fruit': 1, 'Vegetable': {'Cabbage': 2, 'Cauliflower': 3}, 'Spices': 4}
+
+Sample Output:
+['Fruit', 'Spices', 'Vegetable_Cabbage', 'Vegetable_Cauliflower']
+[1, 2, 3, 4]
+
+--============================================================================
+
+
+
+
+
+import ast
+
+def flatten_dict(dd, separator ='_', prefix =''): 
+    return { prefix + separator + k if prefix else k : v 
+             for kk, vv in dd.items() 
+             for k, v in flatten_dict(vv, separator, kk).items() 
+             } if isinstance(dd, dict) else { prefix : dd } 
+          
+# initialising_dictionary 
+
+input_str = input()
+ini_dict = ast.literal_eval(input_str)
+# ini_dict = {'Fruit': 1, 'Vegetable': {'Cabbage': 2, 'Cauliflower': 3}, 'Spices': 4}
+  
+
+  
+  
+
+new_dict =  ( dict(flatten_dict(ini_dict)))
+new_list = []
+
+sort_list = list(new_dict.keys())
+
+sort_list.sort()
+print(sort_list)
+
+
+
+for keys in new_dict:
+    new_list.append(new_dict[keys])
+
+print(new_list)
